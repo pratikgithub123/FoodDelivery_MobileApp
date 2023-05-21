@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'login_screen.dart';
+import 'signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,9 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'MyLogin'),
       routes: {
+        
         '/login': (context) => LoginScreen(),
+        '/signup': (context) => SignupScreen(),
       },
     );
   }
