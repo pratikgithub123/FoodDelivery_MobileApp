@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/login.dart';
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -11,10 +12,7 @@ class _MyRegisterState extends State<MyRegister> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
-      ),
+      decoration: const BoxDecoration(),
       child: Scaffold(
         backgroundColor: Colors.orange,
         appBar: AppBar(
@@ -24,9 +22,9 @@ class _MyRegisterState extends State<MyRegister> {
         body: Stack(
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 35, top: 30),
+              padding: const EdgeInsets.only(left: 35, top: 5),
               child: const Text(
-                'Create\nAccount',
+                'Create\n Your Account',
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
@@ -42,22 +40,12 @@ class _MyRegisterState extends State<MyRegister> {
                       child: Column(
                         children: [
                           TextField(
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(),
+                            obscureText: true,
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                hintText: "Name",
-                                hintStyle: const TextStyle(color: Colors.white),
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintText: "Full Name",
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -66,22 +54,40 @@ class _MyRegisterState extends State<MyRegister> {
                             height: 30,
                           ),
                           TextField(
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(),
+                            obscureText: true,
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintText: "Adress",
+                                border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
+                                )),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            style: const TextStyle(),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintText: "Phone Num",
+                                border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
+                                )),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            style: const TextStyle(),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
                                 hintText: "Email",
-                                hintStyle: const TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -90,22 +96,12 @@ class _MyRegisterState extends State<MyRegister> {
                             height: 30,
                           ),
                           TextField(
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(),
+                            obscureText: true,
                             decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: const BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                ),
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
                                 hintText: "Password",
-                                hintStyle: const TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -116,20 +112,42 @@ class _MyRegisterState extends State<MyRegister> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 27,
-                                    fontWeight: FontWeight.w700),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MyRegister()),
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  backgroundColor:
+                                      Colors.black, // Set the text color
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 16.0,
+                                      horizontal:
+                                          30.0), // Set the button padding
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        8.0), // Set the button border radius
+                                  ),
+                                ),
+                                child: const Text('Register Your Details'),
                               ),
                               CircleAvatar(
                                 radius: 30,
-                                backgroundColor: const Color(0xff4c505b),
+                                backgroundColor: Colors.black,
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {
-                                      Navigator.pushNamed(context, 'login');
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const MyLogin()),
+                                      );
                                     },
                                     icon: const Icon(
                                       Icons.arrow_forward,
@@ -140,25 +158,6 @@ class _MyRegisterState extends State<MyRegister> {
                           const SizedBox(
                             height: 40,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
-                                },
-                                style: const ButtonStyle(),
-                                child: const Text(
-                                  'Sign In',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.white,
-                                      fontSize: 18),
-                                ),
-                              ),
-                            ],
-                          )
                         ],
                       ),
                     )

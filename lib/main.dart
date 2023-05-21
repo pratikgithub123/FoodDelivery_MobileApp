@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/dashboard.dart';
 
+import 'dashboard.dart';
 import 'login.dart';
 import 'register.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: DashboardScreen(),
+      home: MyLogin(),
     );
   }
 }
