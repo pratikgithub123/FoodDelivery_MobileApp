@@ -41,7 +41,6 @@ class _MyRegisterState extends State<MyRegister> {
                         children: [
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
@@ -55,7 +54,6 @@ class _MyRegisterState extends State<MyRegister> {
                           ),
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
@@ -69,7 +67,6 @@ class _MyRegisterState extends State<MyRegister> {
                           ),
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
@@ -83,7 +80,6 @@ class _MyRegisterState extends State<MyRegister> {
                           ),
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
@@ -97,7 +93,6 @@ class _MyRegisterState extends State<MyRegister> {
                           ),
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,

@@ -7,61 +7,61 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Food Delivery App Dashboard'),
+        title: const Text('Pratik Food App'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(16.0),
-            color: Colors.blue,
-            child: const Text(
-              'Welcome to the Pratik Food App!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Today\'s Orders',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.orange,
+                ),
               ),
-            ),
+              const SizedBox(height: 16.0),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: ListTile(
+                      title: Text('Order #${index + 1}'),
+                      subtitle: const Text('Customer Name'),
+                      trailing: const Text('Delivered'),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 16.0),
+              const Text(
+                'Recent Feedback',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.orange,
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return const Card(
+                    child: ListTile(
+                      title: Text('Customer Name'),
+                      subtitle: Text('Great food and service!'),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
-          const SizedBox(height: 16.0),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.restaurant_menu),
-              title: const Text('Menu'),
-              onTap: () {
-                // Handle menu navigation
-              },
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.shopping_cart),
-              title: const Text('Cart'),
-              onTap: () {
-                // Handle cart navigation
-              },
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.favorite),
-              title: const Text('Favorites'),
-              onTap: () {
-                // Handle favorites navigation
-              },
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                // Handle settings navigation
-              },
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

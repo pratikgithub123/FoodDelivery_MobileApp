@@ -23,7 +23,8 @@ class _MyLoginState extends State<MyLogin> {
               padding: const EdgeInsets.only(left: 35, top: 130),
               child: const Text(
                 'Login\nTo Your \n Account',
-                style: TextStyle(color: Colors.white, fontSize: 33),
+                style: TextStyle(
+                    color: Colors.white, fontSize: 33, fontFamily: 'Roboto'),
               ),
             ),
             SingleChildScrollView(
@@ -52,7 +53,7 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                           TextField(
                             style: const TextStyle(),
-                            obscureText: true,
+                            
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
@@ -73,7 +74,7 @@ class _MyLoginState extends State<MyLogin> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const DashboardScreen()),
+                                            DashboardScreen()),
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
